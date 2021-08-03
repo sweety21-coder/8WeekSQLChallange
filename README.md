@@ -84,6 +84,7 @@ The final members table captures the ```join_date``` when a ```customer_id``` jo
  join menu m on
  s.product_id= m.product_id
  group by customer_id;
+ ```
  
  **Result:**
 | customer_id | total_spent |
@@ -95,7 +96,7 @@ The final members table captures the ```join_date``` when a ```customer_id``` jo
 > * **Customer A** spent **$76**
 > * **Customer B** spent **$74**
 > * **Customer C** spent **$36**
- 
+---
  
  
  
