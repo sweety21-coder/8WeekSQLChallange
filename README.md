@@ -17,5 +17,5 @@ Danny wants to use the data to answer a few simple questions about his customers
 ## 📂 Dataset
 Danny has shared 3 key datasets for this case study:
  
- * ### **sales**
+ * ### **```sales```**
 
