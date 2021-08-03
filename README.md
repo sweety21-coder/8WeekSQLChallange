@@ -87,18 +87,81 @@ The final members table captures the ```join_date``` when a ```customer_id``` jo
  ```
  
  **Result:**
-| customer_id | total_spent |
-| ----------- | ----------- |
-| A           | 76          |
-| B           | 74          |
-| C           | 36          |
+| customer_id  | total_amount_spent |
+| -------------|--------------------|
+| A            | 76                 |
+| B            | 74                 |
+| C            | 36                 |
 
 > * **Customer A** spent **$76**
 > * **Customer B** spent **$74**
 > * **Customer C** spent **$36**
 ---
+### **Q2. How many days has each customer visited the restaurant?**
+ 
+ ```Query
+ 
+select customer_id,COUNT(distinct order_date)as num_of_visit
+from sales
+group by customer_id;
+```
+
+ **Result:**
+|customer_id|Num_of_visit|
+|-----------|------------|
+|A          |4           |
+|B          |6           |
+|C          |2           |
+
+> * **Customer A** has visited **4 days**
+> * **Customer B** has visited **6 days**
+> * **Customer C** has visited **2 days**
+
+### **Q3. What was the first item from the menu purchased by each customer?**
+
+```Query
+ with first_item
+as
+(
+    select customer_id,product_name,
+    Rank() over (partition by customer_id order by order_date) as first_occurence
+    from sales
+    join menu
+    on sales.product_id= menu.product_id
+    
+ )
+ select distinct customer_id,product_name
+ from first_item
+ where first_occurence= 1;
+ ```
+ **Result:**
+| customer_id | product_name | 
+| ----------- | ------------ | 
+| A           | sushi        |
+| B           | curry        |
+| C           | ramen        |
+ > First item purchased by:
+> * **Customer A** is **sushi**
+> * **Customer B** is **curry**
+> * **Customer C** is **ramen**
+
+### **Q4. What is the most purchased item on the menu and how many times was it purchased by all customers?**
+
+```Query
+SELECT top(1)m.product_name, COUNT(1) as purchased_count
+FROM sales s
+JOIN menu m
+ON s.product_id=m.product_id
+GROUP BY m.product_name
+ORDER BY COUNT(1) DESC;
+```
+ **Result:**
+|product_name|Purchased_count|
+|------------|---------------|
+|ramen       |8              |
  
  
+
  
  
 
