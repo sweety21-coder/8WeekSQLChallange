@@ -6,5 +6,5 @@
 *  [Problem Statement](#problem-statement)
 *  [Dataset](#dataset)
 * [Case Study Questions](#case-study-questions)
-*  [Solutions](#solutions)
+* <i class="ri-home-heart-line"></i> [Solutions](#solutions)
  
