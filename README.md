@@ -191,12 +191,144 @@ WHERE ranking=1;
 > Most popular item for:
 > * **Customer A** was **Ramen** 
 > * **Customer B** ordered **all three menu items equally**
-> * **Customer C** was **ramen** 
- 
- 
+> * **Customer C** was **ramen**
 
+<br /> 
+----
+### **Q6. Which item was purchased first by the customer after they became a member?**
  
- 
+```Query
+
+with CTE
+as
+(
+   select s.customer_id,s.order_date,m.product_name,
+   RANK()over(PARTITION by s.customer_id order by order_date) as ranking
+   from sales s
+   join menu m
+   on s.product_id=m.product_id
+   join members me
+   on s.customer_id=me.customer_id
+   where s.order_date>= me.join_date
+ )
+ select customer_id,product_name
+ from CTE
+ where ranking=1;
+```
+**Result:**
+| customer_id | product_name | 
+| ----------- | ------------ | 
+| A           | curry        | 
+| B           | sushi        | 
+
+> First product ordered after becoming a member:
+> * **Customer A** is **curry** 
+> * **Customer B** is **sushi**
+> 
+> (*Customer C is not included in the list cos C didn't join the membership program*)
+<br /> 
+---
+### **Q7. Which item was purchased just before the customer became a member?**
+```Query
+with CTE
+as
+(
+  select s.customer_id,s.order_date,m.product_name,
+  RANK()over(partition by s.customer_id order by order_date desc )as ranking
+  from sales s
+  join menu m
+  on s.product_id=m.product_id
+  join members me 
+  on s.customer_id=me.customer_id
+  where order_date<join_date
+ )
+ select customer_id,product_name
+ from CTE
+ where ranking=1;
+ ```
+**Result:**
+| customer_id | product_name |
+| ----------- | ------------ |
+| A           | sushi        | 
+| A           | curry        |
+| B           | sushi        |
+
+> Last item purchased before becoming a member:
+> * **Customer A** has ordered **Sushi/Curry**
+> * **Customer B** was **sushi**
+
+### **Q8. What is the total items and amount spent for each member before they became a member?**
+```Query
+with CTE
+as
+(
+  select s.customer_id,s.product_id as product,sum(price) as amount_spent
+  from sales s
+  join menu m
+  on s.product_id=m.product_id
+  join members me
+  on s.customer_id=me.customer_id
+  where order_date<join_date
+  group by s.customer_id,s.product_id
+ )
+ select customer_id,COUNT(cte.product) as total_items ,sum(cte.amount_spent)as total_spent
+ from CTE
+ group by customer_id;
+```
+**Result:**
+| customer_id |  | total_items |total_spent|
+| ----------- | ----------- | ----------- |
+| A           |2            |   25        |
+| B           |3            |  40         |
+
+**Answer:**
+* **Customer A** spent **$25** on **2 items** before becoming member
+* **Customer B** spent **$40** on **3 items** before becoming member
+
+ ### **Q9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
+```Query
+ select customer_id,sum(price*(case when product_name='sushi' then 20 else 10 end)) as total_points
+ from sales 
+ join menu m
+ on sales.product_id=m.product_id
+  group by customer_id;
+```
+**Result:**
+| customer_id | total_points |
+| ----------- | ------------ |
+| A           | 860          |
+| B           | 940          |
+| C           | 360          |
+
+ * **Customer A** has **860 pts**
+* **Customer  B** has **940 pts**
+* **Customer C** has **360  pts**
+<br /> 
+----
+
+### **Q10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?**
+```Query
+select s.customer_id,
+SUM(price*(case when order_date<join_date and product_name <> 'sushi'then 10
+when order_date< join_date and product_name='sushi'then 20
+when order_date>= join_date then 20 else 10 end))as total_points
+from sales s
+join menu
+on s.product_id=menu.product_id
+join members m 
+on s.customer_id=m.customer_id
+where order_date<= '2021-01-31'
+group by s.customer_id;
+```
+**Result:**
+| customer_id | total_points |
+| ----------- | ------------ |
+| A           | 1370         |
+| B           |	940	     |
+		      
+
+
+
 
  
  
