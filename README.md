@@ -281,6 +281,7 @@ as
 
 > * **Customer A** spent **$25** on **2 items** before becoming member
 > * **Customer B** spent **$40** on **3 items** before becoming member
+	
 			     
 
 ### **Q9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?**
