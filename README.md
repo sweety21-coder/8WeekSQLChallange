@@ -224,8 +224,8 @@ as
 > * **Customer B** is **sushi**
 > 
 > (*Customer C is not included in the list cos C didn't join the membership program*)
-<br /> 
----
+
+	
 ### **Q7. Which item was purchased just before the customer became a member?**
 ```Query
 with CTE
@@ -301,9 +301,8 @@ as
  * **Customer A** has **860 pts**
 * **Customer  B** has **940 pts**
 * **Customer C** has **360  pts**
-<br /> 
-----
 
+			     
 ### **Q10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?**
 ```Query
 select s.customer_id,
@@ -324,7 +323,6 @@ group by s.customer_id;
 | A           | 1370         |
 | B           |	940	     |
 		      
-
 
 
 
