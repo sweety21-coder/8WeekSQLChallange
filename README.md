@@ -193,8 +193,6 @@ WHERE ranking=1;
 > * **Customer B** ordered **all three menu items equally**
 > * **Customer C** was **ramen**
 
-<br /> 
-----
 ### **Q6. Which item was purchased first by the customer after they became a member?**
  
 ```Query
