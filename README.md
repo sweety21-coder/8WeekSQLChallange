@@ -327,7 +327,7 @@ group by s.customer_id;
 		       
 ## Bonus Questions
 	
-### **Q11. Join All The Things. The following questions are related creating basic data tables that Danny and his team can use to quickly derive insights without needing to join the underlying tables using SQL.
+### **Q11. Join All The Things. The following questions are related creating basic data tables that Danny and his team can use to quickly derive insights without needing to join the underlying tables using SQL.**
 
 **Recreate the following table output using the available data:**
 
@@ -363,7 +363,7 @@ select s.customer_id,order_date,product_name,price,
  order by customer_id,order_date;
 ```
 
-### **Q12. Rank All The Things. Danny also requires further information about the ranking of customer products, but he purposely does not need the ranking for non-member purchases so he expects null ranking values for the records when customers are not yet part of the loyalty program.
+### **Q12. Rank All The Things. Danny also requires further information about the ranking of customer products, but he purposely does not need the ranking for non-member purchases so he expects null ranking values for the records when customers are not yet part of the loyalty program.**
 
 **Recreate the following table output using the available data:**
 
