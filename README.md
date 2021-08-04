@@ -1,7 +1,6 @@
 # 🍜 Case Study #1 - Danny's Diner 
 <p align="center">
 	
-![Danny's Diner](https://user-images.githubusercontent.com/66988391/128185438-fefd7900-3568-4560-80a2-27df4e976e3d.png width=50% height=50%)
 	
  ## 📕 Table Of Contents
 * 🛠️ [Problem Statement](#problem-statement)
