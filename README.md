@@ -1,7 +1,7 @@
 # 🍜 Case Study #1 - Danny's Diner 
 <p align="center">
-<https://github.com/sweety21-coder/8WeekSQLChallange/issues/1#issue-960416106>
-
+![Danny's Diner](https://user-images.githubusercontent.com/66988391/128185438-fefd7900-3568-4560-80a2-27df4e976e3d.png)
+	
  ## 📕 Table Of Contents
 * 🛠️ [Problem Statement](#problem-statement)
 * 📁 [Dataset](#dataset)
