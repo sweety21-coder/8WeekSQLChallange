@@ -160,6 +160,39 @@ ORDER BY COUNT(1) DESC;
 |------------|---------------|
 |ramen       |8              |
  
+Most purchased item was **ramen**, which was ordered **8 times**
+
+ ### **Q5. Which item was the most popular for each customer?**
+ ```Query
+ 
+WITH CTE
+AS
+(
+SELECT customer_id, product_id, COUNT(product_id) AS count_of_product,
+RANK() OVER (PARTITION BY customer_id ORDER BY COUNT(product_id) DESC) AS ranking
+FROM sales
+GROUP BY customer_id, product_id
+)
+SELECT customer_id, product_name, count_of_product
+FROM CTE c
+	JOIN menu m
+		ON c.product_id=m.product_id
+WHERE ranking=1;
+ ```
+ **Result:**
+| customer_id | product_name | Count_of_product|
+| ----------- | ------------ | --------------- | 
+| A           | ramen        | 3               | 
+| B           | ramen        | 2               | 
+| B           | curry        | 2               | 
+| B           | sushi        | 2               | 
+| C           | ramen        | 3               | 
+ 
+> Most popular item for:
+> * **Customer A** was **Ramen** 
+> * **Customer B** ordered **all three menu items equally**
+> * **Customer C** was **ramen** 
+ 
  
 
  
