@@ -404,8 +404,7 @@ select s.customer_id,order_date,product_name,price,
  from Ranks
  order by customer_id,order_date;
  ```
-<br />				 
-
+<br />
 				 
 		      
 
