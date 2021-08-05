@@ -177,6 +177,9 @@ group by c.order_id;
 |Order_id| pizza_with_exclusion_and_extras| 
 |--------|--------------------------------|
 | 10     |        1                       |
+  
+only 1 pizza order that had both exlcusions and extras
+
 
   
   
