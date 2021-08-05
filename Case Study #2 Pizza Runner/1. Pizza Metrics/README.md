@@ -18,7 +18,7 @@
 
 ## 🔑 Solutions
 ### **Q1. How many pizzas were ordered?**
-'''Query
+```Query
 select COUNT(order_id)as no_of_Pizza_ordered
 from #updated_customer_orders;
 ```
