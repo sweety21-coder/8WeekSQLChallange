@@ -179,6 +179,43 @@ group by c.order_id;
 | 10     |        1                       |
   
 only 1 pizza order that had both exlcusions and extras
+  
+### **Q9. What was the total volume of pizzas ordered for each hour of the day?**
+```Query
+ select DATEPART(HOUR,[order_time])as hour_of_the_day, COUNT(order_id)as pizza_ordered
+ from #updated_customer_orders
+ group by DATEPART(HOUR,[order_time])
+ order by hour_of_the_day;
+ ```
+ **Result:**
+| hour_of_day | pizza_count |
+|-------------|-------------|
+| 11          | 1           |
+| 13          | 3           |
+| 18          | 3           |
+| 19          | 1           |
+| 21          | 3           |
+| 23          | 3           |
+  
+ 
+### **Q10. What was the volume of orders for each day of the week?**
+ ```Query
+ 
+select DATENAME(WEEKDAY,order_time)as day_of_week,COUNT(order_id)as pizza_ordered
+from #updated_customer_orders
+group by DATENAME(WEEKDAY,order_time)
+order by day_of_week;
+```
+**Result:**
+| day_of_week | pizza_count |
+|-------------|-------------|
+| Friday      | 1           |
+| Saturday    | 5           |
+| Thursday    | 3           |
+| Wednesday   | 5           |
+
+
+
 
 
   
