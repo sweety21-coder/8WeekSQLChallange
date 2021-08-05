@@ -1,1 +1,1 @@
-# [8-Week SQL Challenge](https://github.com/sweety21-coder/8WeekSQLChallange)
+# [8WeeksSQLChallange](https://github.com/sweety21-coder/8WeekSQLChallange)
