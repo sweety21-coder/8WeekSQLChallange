@@ -1,4 +1,4 @@
-#[8WeeksSQLChallange](https://github.com/sweety21-coder/8WeekSQLChallange)
+# [8WeeksSQLChallange](https://github.com/sweety21-coder/8WeekSQLChallange)
 
 # 🍜 Case Study #1 - Danny's Diner 
 <p align="center">
