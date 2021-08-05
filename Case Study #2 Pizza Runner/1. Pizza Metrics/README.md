@@ -43,6 +43,7 @@ from #updated_customer_orders;
 **10 UNIQUE customer orders** 
 
 ### **Q3.How many successful orders were delivered by each runner?**
+
 ```Query
 SELECT runner_id,COUNT(order_id) AS successful_orders
 FROM #updated_runner_orders
@@ -75,7 +76,7 @@ group by pizza_name;
 | Vegetarian | 3                     |
 
  **9 ```Meatlovers```** pizzas were ordered.
-- **3 ```Vegetarian```** pizzas were ordered.
+ **3 ```Vegetarian```** pizzas were ordered.
 
 ### **Q5. How many Vegetarian and Meatlovers were ordered by each customer?**
 ```Query
@@ -128,6 +129,7 @@ from CTE;
 | max_Pizza_in_single_order|
 |--------------------------|
 |        3                 |  
+
 maximum number of pizzas delivered in a single order is **3**
   
 ### **Q7. For each customer, how many delivered pizzas had at least 1 change and how many had no changes?**
