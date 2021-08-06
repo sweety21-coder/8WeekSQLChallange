@@ -153,6 +153,35 @@ from #updated_customer_orders c
 | 1        | 1         | 1            | 20             | 32       | 37.50 |
 | 4        | 2         | 3            | 23.4           | 40       | 35.10 |
 
+### **Q7. What is the successful delivery percentage for each runner?**
+ ```Query
+ With CTE 
+as
+(
+select runner_id,count(order_id)as total_delivery,
+SUM(CASE
+    WHEN distance <> 0 THEN 1 
+    ELSE distance
+    END) as successful_delivery,
+SUM(CASE
+    WHEN cancellation like '%cancel%' THEN 1
+    ELSE cancellation
+    END) as failed_delivery
+from #updated_runner_orders 
+ group by runner_id
+)
+select runner_id,(SUM(successful_delivery)/SUM(total_delivery)*100)as delivery_percent
+from CTE
+group by runner_id;
+```
+**Result:**
+
+| runner_id | delivery_percent|
+|-----------|-----------------|
+| 1         | 100             |
+| 2         | 75              |
+| 3         | 50              |
+
 
  
 
