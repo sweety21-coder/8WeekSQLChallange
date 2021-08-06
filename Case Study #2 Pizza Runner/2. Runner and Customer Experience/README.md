@@ -130,6 +130,31 @@ from time_taken;
 | 20                                |
 
 ### **Q6. What was the average speed for each runner for each delivery and do you notice any trend for these values?**
+```Query
+select c.order_id, runner_id,count(c.order_id)as pizza_count,(distance*1000)as distance_meter,
+(duration*60)as time_sec,round((distance)/(duration)*60,2)as avg_speed
+from #updated_customer_orders c
+ join #updated_runner_orders r
+ on c.order_id=r.order_id
+ where distance <> 0
+ group by runner_id,duration,distance,c.order_id
+ order by avg_speed desc;
+ ```
+ **Result**
+
+| order_id | runner_id | pizzas_count | distance_meter | time_sec | speed |
+|----------|-----------|--------------|----------------|----------|-------|
+| 8        | 2         | 1            | 23.4           | 15       | 93.60 |
+| 7        | 2         | 1            | 25             | 25       | 60.00 |
+| 10       | 1         | 2            | 10             | 10       | 60.00 |
+| 2        | 1         | 1            | 20             | 27       | 44.44 |
+| 3        | 1         | 2            | 13.4           | 20       | 40.20 |
+| 5        | 3         | 1            | 10             | 15       | 40.00 |
+| 1        | 1         | 1            | 20             | 32       | 37.50 |
+| 4        | 2         | 3            | 23.4           | 40       | 35.10 |
+
+
+ 
 
 
 
