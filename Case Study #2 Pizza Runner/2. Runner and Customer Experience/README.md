@@ -106,8 +106,32 @@ order by customer_id;
 | 101       | 20                  |
 | 102       | 16.73               |
 | 103       | 23.4                |
-| 104        | 10                 |
-| 105        | 25                 |
+| 104       | 10                  |
+| 105       | 25                  |
+ 
+### **Q5. What was the difference between the longest and shortest delivery times for all orders?**
+```Query
+with time_taken
+as
+(
+select c.order_id,runner_id,DATEDIFF(MINUTE,order_time,pickup_time)as delivery_time
+from #updated_customer_orders c
+join #updated_runner_orders r
+on c.order_id=r.order_id
+where distance <> 0
+group by c.order_id,runner_id,order_time,pickup_time
+)
+select (MAX(delivery_time)-MIN(delivery_time))as diff_longest_shortest_delivery_time
+from time_taken;
+```
+**Result**
+|diff_longest_shortest_delivery_time|
+|-----------------------------------|
+| 20                                |
+
+### **Q6. What was the average speed for each runner for each delivery and do you notice any trend for these values?**
+
+
 
 
   
