@@ -31,13 +31,13 @@
 5. If a Meat Lovers pizza was $12 and Vegetarian $10 fixed prices with no cost for extras and each runner is paid $0.30 per kilometre traveled - 
    how much money does Pizza Runner have left over after these deliveries?
 
-## E. Bonus Questions
+### E. Bonus Questions
                 
 If Danny wants to expand his range of pizzas - how would this impact the existing data design? Write an INSERT statement to 
 demonstrate what would happen if a new Supreme pizza with all the toppings was added to the Pizza Runner menu?
 
 ## 🔑 Solutions
-### **Q1.If a Meat Lovers pizza costs $12 and Vegetarian costs $10 and there were no charges for changes - how much money has 
+###**Q1.If a Meat Lovers pizza costs $12 and Vegetarian costs $10 and there were no charges for changes - how much money has 
          Pizza Runner made so far if there are no delivery fees?
 ```Query
 select
