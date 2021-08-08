@@ -2,7 +2,7 @@
 
 > This repository contains all my code submissions for the **#8WeekSQLChallenge**! 
 > 
-> All case study's requirements and resources are available on  [website](https://8weeksqlchallenge.com)
+> All case study's requirements are available on  [website](https://8weeksqlchallenge.com)
  
  
  
