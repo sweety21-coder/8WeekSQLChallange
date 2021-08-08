@@ -65,9 +65,13 @@ on c.order_id=r.order_id
 where distance <> 0;
 ```
 **Result**
-|MoneyEarned|
-|-----------|
-| 150       |
+|Total_earned |
+|-------------|
+| 150         |
+
+**Result**
+Total Money earned by including additional charge for extras and cheese is 150$
+
 
 ### **Q3.The Pizza Runner team now wants to add an additional ratings system that allows customers to rate their runner,how would you design an additional table for this new dataset - generate a schema for this new table and insert your own data for ratings for each successful customer order between 1 to 5.**
 ```Query
@@ -100,7 +104,7 @@ select * from Ratings;
 |102        |8       |2        |4     |
 |104        |10      |1        |4     |
 
-### **Q4. Using your newly generated table - can you join all of the information together to form a table which has the following information for successful deliveries?
+### **Q4. Using your newly generated table - can you join all of the information together to form a table which has the following information for successful deliveries?**
 customer_id,
 order_id,
 runner_id,
@@ -111,8 +115,9 @@ Time between order and pickup,
 Delivery duration,
 Average speed,
 Total number of pizzas
+ 
 ```Query
- select c.customer_id,c.order_id,ro.runner_id,Rating,order_time,
+select c.customer_id,c.order_id,ro.runner_id,Rating,order_time,
 pickup_time ,DATEDIFF(MINUTE,order_time,pickup_time)as time_between_order_and_pickup,duration,
 ROUND(avg((convert(float,distance) / convert(float,duration))*60),2) AS average_speed,COUNT(*)as Pizza_count
 from #updated_customer_orders c
@@ -137,8 +142,29 @@ order by order_id;
  |8        |2         |4      |2020-01-09 23:54:33.000    |2020-01-10 00:15:02.000  |21                            |15       |93.6          |1           |
  |10       |1         |4      |2020-01-11 18:34:49.000    |2020-01-11 18:50:20.000  |16                            |10       |60            |2           |
  
+### **Q5. If a Meat Lovers pizza was $12 and Vegetarian $10 fixed prices with no cost for extras and each runner is paid $0.30 per kilometre traveled -  how much money does Pizza Runner have left over after these deliveries?**
+```Query
+ with cte
+as
+(
+select runner_id,
+SUM(CASE WHEN pizza_id = 1 THEN 12 ELSE 10 END)-
+SUM(CASE WHEN distance <> 0 THEN (distance * 0.30) ELSE 0 END)as Money_earned
+from #updated_customer_orders c
+join #updated_runner_orders r
+on c.order_id=r.order_id
+where distance <> 0
+group by runner_id
+)
+select SUM(money_earned)as profit
+from cte;
+```
+|profit |
+|-------|
+|73.38  |
 
-
+**Result**
+Pizza Runner's profit is 73.38$
 
 
   
