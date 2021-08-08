@@ -100,6 +100,43 @@ select * from Ratings;
 |102        |8       |2        |4     |
 |104        |10      |1        |4     |
 
+### **Q4. Using your newly generated table - can you join all of the information together to form a table which has the following information for successful deliveries?
+customer_id,
+order_id,
+runner_id,
+rating,
+order_time,
+pickup_time,
+Time between order and pickup,
+Delivery duration,
+Average speed,
+Total number of pizzas
+```Query
+ select c.customer_id,c.order_id,ro.runner_id,Rating,order_time,
+pickup_time ,DATEDIFF(MINUTE,order_time,pickup_time)as time_between_order_and_pickup,duration,
+ROUND(avg((convert(float,distance) / convert(float,duration))*60),2) AS average_speed,COUNT(*)as Pizza_count
+from #updated_customer_orders c
+join #updated_runner_orders ro
+on c.order_id=ro.order_id
+join Ratings r
+on c.order_id= r.Order_id
+where distance <> 0
+group by c.customer_id,c.order_id,ro.runner_id,Rating,order_time,
+pickup_time,duration
+order by order_id;
+```
+**Result**
+ |Order_id |Runner_id |Rating |  order_time               |pickup_time              |time_between_order_and_pickup |duration |average_speed |Pizza_count |
+ |---------|----------|-------|---------------------------|-------------------------|------------------------------|---------|--------------|------------|
+ |1        |1         |5      |2020-01-01 18:05:02.000    |2020-01-01 18:15:34.000  |10                            |32       |37.5          |1           |
+ |2        |1         |5      |2020-01-01 19:00:52.000    |2020-01-01 19:10:54.000  |10                            |27       |44.44         |1           |
+ |3        |1         |4      |2020-01-02 23:51:23.000    |2020-01-03 00:12:37.000  |21                            |20       |40.2          |2           |
+ |4        |2         |4      |2020-01-04 13:23:46.000    |2020-01-04 13:53:03.000  |30                            |40       |35.1          |3           |
+ |5        |3         |3      |2020-01-08 21:00:29.000    |2020-01-08 21:10:57.000  |10                            |15       |40            |1           |
+ |7        |2         |5      |2020-01-08 21:20:29.000    |2020-01-08 21:30:45.000  |10                            |25       |60            |1           |
+ |8        |2         |4      |2020-01-09 23:54:33.000    |2020-01-10 00:15:02.000  |21                            |15       |93.6          |1           |
+ |10       |1         |4      |2020-01-11 18:34:49.000    |2020-01-11 18:50:20.000  |16                            |10       |60            |2           |
+ 
 
 
 
