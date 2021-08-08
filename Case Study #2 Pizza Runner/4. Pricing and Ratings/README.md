@@ -158,11 +158,11 @@ group by runner_id
 select SUM(money_earned)as profit
 from cte;
 ```
+**Result**
 |profit |
 |-------|
 |73.38  |
 
-**Result**
 Pizza Runner's profit is 73.38$
 
 
