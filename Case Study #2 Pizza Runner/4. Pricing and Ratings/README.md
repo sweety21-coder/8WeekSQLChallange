@@ -37,8 +37,8 @@ If Danny wants to expand his range of pizzas - how would this impact the existin
 demonstrate what would happen if a new Supreme pizza with all the toppings was added to the Pizza Runner menu?
 
 ## 🔑 Solutions
-###**Q1.If a Meat Lovers pizza costs $12 and Vegetarian costs $10 and there were no charges for changes - how much money has 
-         Pizza Runner made so far if there are no delivery fees?
+### **Q1.If a Meat Lovers pizza costs $12 and Vegetarian costs $10 and there were no charges for changes - how much money has 
+         Pizza Runner made so far if there are no delivery fees?**
 ```Query
 select
 sum(CASE WHEN c.pizza_id= 1 THEN 12 ELSE 10 END) as Money_earned
@@ -53,7 +53,56 @@ where distance <> 0;
 | 138       |
 
 **Money Earned by Pizza Runner is 138$**
- 
+
+### **Q2.What if there was an additional $1 charge for any pizza extras? Add cheese is $1 extra.
+```Query
+select
+SUM(CASE WHEN pizza_id= 1 THEN 12 ELSE 10 END)+
+SUM(CASE WHEN extras is not null or extras <> '' THEN 1 ELSE 0 END) as Total_earned
+from #updated_customer_orders c
+join #updated_runner_orders r
+on c.order_id=r.order_id
+where distance <> 0;
+```
+**Result**
+|MoneyEarned|
+|-----------|
+| 150       |
+
+### **Q3.The Pizza Runner team now wants to add an additional ratings system that allows customers to rate their runner,
+       how would you design an additional table for this new dataset - generate a schema for this new table and insert 
+       Your own data for ratings for each successful customer order between 1 to 5.
+```Query
+create table Ratings(
+Customer_id Integer,
+Order_id Integer,
+Runner_id integer,
+Rating integer)
+Insert into Ratings values
+(101,1,1,5),
+(101,2,1,5),
+(102,3,1,4),
+(103,4,2,4),
+(104,5,3,3),
+(105,7,2,5),
+(102,8,2,4),
+(104,10,1,4);
+
+select * from Ratings;
+```
+**Result**
+|Customer_id|Order_id|Runner_id|Rating|
+|-----------|--------|---------|------|
+|101        |1       |1        |5     |
+|101        |2       |1        |5     |
+|102        |3       |1        |4     |
+|103        |4       |2        |4     |
+|104        |5       |3        |3     |
+|105        |7       |2        |5     |
+|102        |8       |2        |4     |
+|104        |10      |1        |4     |
+
+
 
   
   
