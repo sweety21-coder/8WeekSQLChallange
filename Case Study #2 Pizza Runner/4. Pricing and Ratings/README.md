@@ -2,6 +2,7 @@
 # 🍕 Case Study #2 - Pizza Metrics
 <p align="center">
 <img src= "https://github.com/sweety21-coder/8WeekSQLChallange/blob/main/IMG/Pizza%20Runner.png?raw=true" width=50%,height=50%>
+
  ## 📋 Case Study's Questions
 
   1.If a Meat Lovers pizza costs $12 and Vegetarian costs $10 and there were no charges for changes - how much money has 
