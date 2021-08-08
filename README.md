@@ -3,6 +3,10 @@
 > This repository contains all my code submissions for the **#8WeekSQLChallenge**! 
 > 
 > All case study's requirements are available on  [website](https://8weeksqlchallenge.com)
+
+## 📕  Table Of Contents
+* [🍜 Case Study #1 - Danny's Diner](#-case-study-1---dannys-diner)
+* [🍕 Case Study #2 - Pizza Runner](#-case-study-2---pizza-runner)
  
  
  
