@@ -69,7 +69,6 @@ where distance <> 0;
 |-------------|
 | 150         |
 
-**Result**
 Total Money earned by including additional charge for extras and cheese is 150$
 
 
