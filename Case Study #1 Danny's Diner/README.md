@@ -262,21 +262,14 @@ as
 
 ### **Q8. What is the total items and amount spent for each member before they became a member?**
 ```Query
-with CTE
-as
-(
-  select s.customer_id,s.product_id as product,sum(price) as amount_spent
-  from sales s
-  join menu m
-  on s.product_id=m.product_id
-  join members me
-  on s.customer_id=me.customer_id
-  where order_date<join_date
-  group by s.customer_id,s.product_id
- )
- select customer_id,COUNT(cte.product) as total_items ,sum(cte.amount_spent)as total_spent
- from CTE
- group by customer_id;
+select s.customer_id,count(m.product_id)as total_item,sum(m.price)as amount_spent
+from sales s
+join menu m
+on s.product_id=m.product_id
+join members me
+on s.customer_id=me.customer_id
+where order_date<join_date
+group by s.customer_id;
 ```
 **Result:**
 | customer_id | total_items |total_spent   |
