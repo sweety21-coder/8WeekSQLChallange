@@ -121,7 +121,7 @@ group by customer_id;
 
 ### **Q3. What was the first item from the menu purchased by each customer?**
 	
-** Note: Instead of ROW_NUMBER or RANK, use DENSE_RANK as order_date is not time-stamped hence, there is no sequence as to which item is ordered first if 2 or more items are ordered on the same day.**
+**Note: Instead of ROW_NUMBER or RANK, use DENSE_RANK as order_date is not time-stamped hence, there is no sequence as to which item is ordered first if 2 or more items are ordered on the same day.**
 
 ```Query
  with first_item
