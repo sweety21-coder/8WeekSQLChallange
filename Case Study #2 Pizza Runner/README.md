@@ -10,7 +10,7 @@
   - [Data Cleaning and Transformation](https://github.com/sweety21-coder/8WeekSQLChallenge/blob/main/Case%20Study%20%232%20Pizza%20Runner/Data%20cleaning.sql)
   - [A. Pizza Metrics](https://github.com/sweety21-coder/8WeekSQLChallenge/tree/main/Case%20Study%20%232%20Pizza%20Runner/1.%20Pizza%20Metrics)
   - [B. Runner and Customer Experience](https://github.com/sweety21-coder/8WeekSQLChallenge/tree/main/Case%20Study%20%232%20Pizza%20Runner/2.%20Runner%20and%20Customer%20Experience)
-  - [D.Pricing and Ratings] (https://github.com/sweety21-coder/8WeekSQLChallenge/tree/main/Case%20Study%20%232%20Pizza%20Runner/4.%20Pricing%20and%20Ratings)
+  - [D.Pricing and Ratings](https://github.com/sweety21-coder/8WeekSQLChallenge/tree/main/Case%20Study%20%232%20Pizza%20Runner/4.%20Pricing%20and%20Ratings)
  
 ***
 
