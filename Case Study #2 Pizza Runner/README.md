@@ -8,21 +8,22 @@
 - 📋 [Case Study Questions]
 - 🔑 Solution
   - [Data Cleaning and Transformation](https://github.com/sweety21-coder/8WeekSQLChallenge/blob/main/Case%20Study%20%232%20Pizza%20Runner/Data%20cleaning.sql)
-  - [A. Pizza Metrics]
-  - [B. Runner and Customer Experience]
+  - [A. Pizza Metrics](https://github.com/sweety21-coder/8WeekSQLChallenge/tree/main/Case%20Study%20%232%20Pizza%20Runner/1.%20Pizza%20Metrics)
+  - [B. Runner and Customer Experience](https://github.com/sweety21-coder/8WeekSQLChallenge/tree/main/Case%20Study%20%232%20Pizza%20Runner/2.%20Runner%20and%20Customer%20Experience)
+  - [D.Pricing and Ratings] (https://github.com/sweety21-coder/8WeekSQLChallenge/tree/main/Case%20Study%20%232%20Pizza%20Runner/4.%20Pricing%20and%20Ratings)
  
 ***
 
-## Problem Statement
+## 🛠️ Problem Statement
 Danny is expanding his new Pizza Empire and at the same time, he wants to Uberize it, so Pizza Runner was launched!
 
 Danny started by recruiting “runners” to deliver fresh pizza from Pizza Runner Headquarters (otherwise known as Danny’s house) and also maxed out his credit card to pay freelance developers to build a mobile app to accept orders from customers. 
 
-## Entity Relationship Diagram
+## 🅰➖🅱 Entity Relationship Diagram
 
 ![image](https://github.com/sweety21-coder/8WeekSQLChallenge/blob/main/IMG/E-R%20Diagram%20Pizza%20Runner.png?raw=true)
 
-## Case Study Questions
+## 📋 Case Study Questions
 
 ### A. Pizza Metrics
 
