@@ -6,7 +6,7 @@
 	
  ## 📕 Table Of Contents
 * 🛠️ [Problem Statement](https://github.com/sweety21-coder/8WeekSQLChallenge/tree/main/Case%20Study%20%231%20Danny's%20Diner#%EF%B8%8F-problem-statement)
-* 🅰➖🅱[Entity Relationship Diagram]()
+* 🅰➖🅱[Entity Relationship Diagram]<img src="https://github.com/sweety21-coder/8WeekSQLChallenge/blob/main/IMG/ER%20Diagram-Danny's%20Dinner.PNG?raw=true" width=50% height=50%>
 * 📁 [Dataset](#-dataset)
 * 📋 [Case Study Questions](#-case-study-questions)
 * 🔑 [Solutions](#-solutions)
