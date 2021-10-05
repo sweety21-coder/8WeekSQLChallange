@@ -7,7 +7,7 @@
 - 🅰➖🅱 [Entity Relationship Diagram]
 - 📋 [Case Study Questions]
 - 🔑 Solution
-  - [Data Cleaning and Transformation]()
+  - [Data Cleaning and Transformation](https://github.com/sweety21-coder/8WeekSQLChallenge/blob/main/Case%20Study%20%232%20Pizza%20Runner/Data%20cleaning.sql)
   - [A. Pizza Metrics]
   - [B. Runner and Customer Experience]
  
