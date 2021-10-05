@@ -3,10 +3,10 @@
 <img src="https://github.com/sweety21-coder/8WeekSQLChallenge/blob/main/IMG/Pizza%20Runner.png?raw=true" width=50% height=50%>
 
 ## 📚 Table of Contents
-- [Problem Statement]
-- [Entity Relationship Diagram]
-- [Case Study Questions]
-- Solution
+- 🛠️ [Problem Statement]
+- 🅰➖🅱 [Entity Relationship Diagram]
+- 📋 [Case Study Questions]
+- 🔑 Solution
   - [Data Cleaning and Transformation]()
   - [A. Pizza Metrics]
   - [B. Runner and Customer Experience]
