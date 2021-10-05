@@ -3,7 +3,7 @@
 <img src="https://github.com/sweety21-coder/8WeekSQLChallenge/blob/main/IMG/Pizza%20Runner.png?raw=true" width=50% height=50%>
 
 ## 📚 Table of Contents
-- -[Problem Statement]
+- [Problem Statement]
 - [Entity Relationship Diagram]
 - [Case Study Questions]
 - Solution
@@ -26,7 +26,7 @@ Danny started by recruiting “runners” to deliver fresh pizza from Pizza Runn
 
 ### A. Pizza Metrics
 
-View my solution [here]().
+View my solution [here](https://github.com/sweety21-coder/8WeekSQLChallenge/tree/main/Case%20Study%20%232%20Pizza%20Runner/1.%20Pizza%20Metrics).
 
 1. How many pizzas were ordered?
 2. How many unique customer orders were made?
