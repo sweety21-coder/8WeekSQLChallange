@@ -5,11 +5,11 @@
 <img src= "https://github.com/sweety21-coder/8WeekSQLChallange/blob/main/IMG/Danny's%20Diner.png?raw=true" width=50% height=50%>
 	
  ## 📕 Table Of Contents
-* 🛠️ [Problem Statement](https://github.com/sweety21-coder/8WeekSQLChallenge/tree/main/Case%20Study%20%231%20Danny's%20Diner#%EF%B8%8F-problem-statement)
+* 🛠️ [Problem Statement](-problem-statement)
 * 🅰➖🅱[Entity Relationship Diagram]()
 * 📁 [Dataset](#-dataset)
-* 📋 [Case Study Questions](https://github.com/sweety21-coder/8WeekSQLChallenge/tree/main/Case%20Study%20%231%20Danny's%20Diner#-case-study-questions)
-* 🔑 [Solutions](https://github.com/sweety21-coder/8WeekSQLChallenge/tree/main/Case%20Study%20%231%20Danny's%20Diner#-solutions)
+* 📋 [Case Study Questions](#-case-study-questions)
+* 🔑 [Solutions](#-solutions)
  
  ## 🛠️ Problem Statement 
 
