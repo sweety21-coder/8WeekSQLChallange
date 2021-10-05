@@ -6,7 +6,7 @@
 	
  ## 📕 Table Of Contents
 * 🛠️ [Problem Statement](#problem-statement)
-* 🅰➖🅱  Entity Relationship Diagram
+* 🅰➖🅱[Entity Relationship Diagram](#Entity Relationship Diagram)
 * 📁 [Dataset](#dataset)
 * 📋 [Case Study Questions](#case-study-questions)
 * 🔑 [Solutions](#solutions)
