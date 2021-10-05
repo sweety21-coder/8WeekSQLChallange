@@ -5,7 +5,7 @@
 <img src= "https://github.com/sweety21-coder/8WeekSQLChallange/blob/main/IMG/Danny's%20Diner.png?raw=true" width=50% height=50%>
 	
  ## 📕 Table Of Contents
-* 🛠️ [Problem Statement](#problem-statement)
+* 🛠️ [Problem-Statement](https://github.com/sweety21-coder/8WeekSQLChallenge/blob/main/Case%20Study%20%231%20Danny's%20Diner/README.md#%EF%B8%8F-problem-statement)(#Problem-statement)
 * 🅰➖🅱[Entity Relationship Diagram](#Entity Relationship Diagram)
 * 📁 [Dataset](#dataset)
 * 📋 [Case Study Questions](#case-study-questions)
